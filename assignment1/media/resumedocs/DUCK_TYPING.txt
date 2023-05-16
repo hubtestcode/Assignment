@@ -1,0 +1,269 @@
+## duck typing
+
+class bird:
+    def fly(self):
+        print("bird flyies")
+        
+class aeroplane:
+    def fly(self):
+        print("aeroplane flyies")
+        
+class kite:
+    def fly(self):
+        print("kite flyies")
+        
+class man:
+    def walk(self):
+        print("man walks")        
+        
+for i in bird(),aeroplane(),kite(),man():
+   i.fly()
+
+
+output:::
+bird flyies
+aeroplane flyies
+kite flyies
+Traceback (most recent call last):
+  File "<string>", line 20, in <module>
+AttributeError: 'man' object has no attribute 'fly'
+
+
+>  HERE IN DUCK TYPING IT FOCUES ON WHAT OBJECT IS DOING MORETHAN THAN WAHT OBJECT IS
+
+
+###################METHOD OVERLOADING
+
+class A:
+    def name(self):
+        print("welcome")
+    def name(self,age=):
+        print("welcome",age)
+    def name(self,age="", year=""):
+        print("welcome",age,year)
+           
+        
+onj = A()
+onj.name()
+onj.name(54)
+onj.name(1998)
+
+OUTPUT::::
+welcome  
+welcome 54 
+welcome 1998 
+
+
+
+
+INSTED WE CAN WRITE:
+class A:
+   )
+    def name(self,age="", year=""):
+        print("welcome",age,year)
+           
+        
+onj = A()
+onj.name()
+onj.name(54)
+onj.name(1998)
+
+HERE WE GET THE SAME OUTPUT.(THIS IS METHOD OVERLOAIFNG)
+
+
+##################################operator overloading
+class A:
+    def __init__(self,m1,m2):
+        self.m1=m1
+        self.m2=m2
+        
+    def __add__(self,other):
+        return self.m2+other.m2
+        
+s1=A(2,3)
+s2=A(1,1)
+print(s1+s2)
+
+###################33METHOD OVERRIDING
+
+1)class A:
+    def num(self):
+        print("hello world")
+        
+class B(A):  (INHERITANCE IS USED)
+    pass
+
+q= A()
+q.num()
+
+  -----------------(METHOD 2 OVERRIDES METHOD 1)--------------
+class A:
+    def num(self):
+        print("hello world")
+        
+class B(A):
+    def num(self):
+        print("hello you")
+
+q= B()
+q.num()
+    
+
+############## ABSTRACTION___-------------------------------(NOTES REFER)
+
+from abc import ABC, abstractmethod
+class car(ABC):
+    def wheels(self):
+        print("car has 4 wheels")
+    @abstractmethod ### bcz we dont know the speed of car so used @abstarctmethod
+    def speed(self):
+        pass
+class nano(car):
+    def speed(self):
+        print("spped is 1000 km\hr")
+class mauti(car):
+    def speed(self):
+        print("spped is 5800 km\hr")
+class bmw(car):
+    def speed(self):
+        print("spped is 8900 km\hr")
+    
+a = nano()
+a.speed()
+a.show()
+
+a1=bmw()
+a.speed()
+a.show()
+    
+####################ENCAPSULATION###################
+
+     _ ( single undersore) means protected
+
+     __ (double undersore) means private
+
+
+### encapsulation
+
+class A:
+    _a=10  ## procted
+    __b=10  ## private
+    def show(self):
+        print("a= ",self._a)
+        print("b= ",self.__b)
+c= A()
+c.show()
+
+print(A._a)  ### to show/ check is it protected
+print(A.__b) #### it will not show result bcz it is private 
+
+
+
+OUTPUT:::
+
+a=  10
+b=  10
+10
+> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
